@@ -6,7 +6,7 @@ const path = require("path");
  * @readonly this function doesnt return the expectetd output as it just seems to write a file with a base class but not with any interface
  */
 
-const result = fs.readdirSync(path.join(__dirname, "../components")).splice(1);
+export const result = fs.readdirSync(path.join(__dirname, "../components")).splice(1);
 console.log(result);
 for (const i in result) {
   generate({

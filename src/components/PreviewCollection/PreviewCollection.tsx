@@ -6,7 +6,7 @@ import CollectionItem from '../CollectionItem/CollectionItem';
 const PreviewCollection: React.FC<ICollections> = ({ title, items }) => {
     return (
         <div className="collection-preview">
-            <h1 className="title">Title: {title.toUpperCase()}</h1>
+            <h1 className="title">{title.toUpperCase()}</h1>
             <div className="preview">
                 {
                     items

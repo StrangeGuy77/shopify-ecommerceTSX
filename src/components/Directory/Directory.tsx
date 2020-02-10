@@ -1,9 +1,9 @@
 import "./DirectoryStyles.scss"
-import React, { Component } from 'react'
+import * as React from 'react'
 import { sections } from '../../utils/DirectoryComponentData';
 import MenuItem from '../MenuItem/MenuItem';
 
-export default class Directory extends Component<any, IState> {
+export default class Directory extends React.Component<any, IState> {
 
     constructor(props: any) {
         super(props)

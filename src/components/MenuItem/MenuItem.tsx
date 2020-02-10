@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import "./MenuItemStyles.scss"
 import { withRouter, RouteComponentProps } from 'react-router-dom'
 
-class MenuItem extends Component<IProps> {
+class MenuItem extends React.Component<IProps> {
 
     render() {
         return (

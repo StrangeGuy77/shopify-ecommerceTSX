@@ -11,8 +11,6 @@ const Button: React.FC<IProps> = ({ children, isGoogleSignIn, ...otherProps }) =
 
 export default Button;
 
-interface IProps {
-    value?: string;
-    onClick?: () => any;
+interface IProps extends React.HTMLAttributes<HTMLButtonElement> {
     isGoogleSignIn?: boolean;
 }

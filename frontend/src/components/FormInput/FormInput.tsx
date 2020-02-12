@@ -29,5 +29,6 @@ interface IProps {
     value?: any;
     type?: string;
     name?: string;
+    required?: boolean
 
 }

@@ -1,12 +1,13 @@
 import * as React from 'react'
-import './UserAuth.scss';
 import SignIn from './SignIn/SignIn'
-// import SignUp from './SignUp/SignUp';
+import SignUp from './SignUp/SignUp';
+import './UserAuth.scss';
 
 const UserAuth: React.FC<any> = () => {
     return (
         <div className="sign-in-component">
             <SignIn />
+            <SignUp />
         </div>
     )
 }

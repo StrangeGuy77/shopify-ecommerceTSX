@@ -26,7 +26,7 @@ export default class SignIn extends React.Component<any, IState> {
         this.setState(prevState => ({
             ...prevState,
             [name]: value,
-        }), () => console.log(this.state))
+        }))
     }
 
     render() {

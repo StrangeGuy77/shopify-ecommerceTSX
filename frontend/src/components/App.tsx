@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom'
 import Header from './Header/Header'
 import ShopPage from '../pages/ShopPage/ShopPage'
 import SignIn from '../pages/UserAuth/UserAuth'
-import { auth } from '../services/firebase/firebase'
+import { auth, createUserProfileDocument } from '../services/firebase/firebase'
 
 
 export default class App extends React.Component<any, IState> {
@@ -21,8 +21,20 @@ export default class App extends React.Component<any, IState> {
   unsubscribeFromAuth: any = null;
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user })
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth as firebase.User)
+        userRef?.onSnapshot(snapshot => {
+          this.setState({
+            currentUser: {
+              id: snapshot.id,
+              ...snapshot.data()
+            }
+          })
+        })
+      } else {
+        this.setState({ currentUser: null })
+      }
     })
   }
 
@@ -46,5 +58,13 @@ export default class App extends React.Component<any, IState> {
 
 
 interface IState {
-  currentUser: any;
+  currentUser: IUserProperties | null;
+}
+
+interface IUserProperties {
+  id: string;
+  displayName?: string;
+  email?: string;
+  createdAt?: Date
+
 }

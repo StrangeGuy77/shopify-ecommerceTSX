@@ -51,10 +51,11 @@ export default class SignIn extends React.Component<any, IState> {
                         label="Password"
                         handleChange={this.handleInput}
                     />
-                    <CustomButton> SignIn </CustomButton>
-                    <CustomButton onClick={signInWithGoogle}> Sign In with Google </CustomButton>
+                    <div className="buttons">
+                        <CustomButton> SignIn </CustomButton>
+                        <CustomButton onClick={signInWithGoogle} isGoogleSignIn> Sign In with Google </CustomButton>
+                    </div>
                 </form>
-
             </div>
         )
     }

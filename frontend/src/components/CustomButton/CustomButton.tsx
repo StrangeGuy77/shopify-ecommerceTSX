@@ -13,4 +13,5 @@ export default Button;
 
 interface IProps {
     value?: string;
+    onClick?: () => any;
 }

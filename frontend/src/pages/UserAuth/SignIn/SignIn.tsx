@@ -2,6 +2,7 @@ import * as React from 'react'
 import './SignIn.scss'
 import FormInput from '../../../components/FormInput/FormInput'
 import CustomButton from '../../../components/CustomButton/CustomButton';
+import { signInWithGoogle } from '../../../services/firebase/firebase';
 
 export default class SignIn extends React.Component<any, IState> {
 
@@ -51,6 +52,7 @@ export default class SignIn extends React.Component<any, IState> {
                         handleChange={this.handleInput}
                     />
                     <CustomButton> SignIn </CustomButton>
+                    <CustomButton onClick={signInWithGoogle}> Sign In with Google </CustomButton>
                 </form>
 
             </div>

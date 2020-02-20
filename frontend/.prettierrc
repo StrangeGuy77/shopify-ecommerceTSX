@@ -1,0 +1,9 @@
+{
+    "jsxSingleQuote": true,
+    "arrowParens": "avoid",
+    "bracketSpacing": false,
+    "jsxBracketSameLine": false,
+    "semi": true,
+    "useTabs": true,
+    "htmlWhitespaceSensitivity": "css"
+}

@@ -1,34 +1,29 @@
-import "./DirectoryStyles.scss"
-import * as React from 'react'
-import { sections } from '../../utils/DirectoryComponentData';
-import MenuItem from '../MenuItem/MenuItem';
+import "./DirectoryStyles.scss";
+import * as React from "react";
+import { sections } from "../../utils/DirectoryComponentData";
+import MenuItem from "../MenuItem/MenuItem";
 
 export default class Directory extends React.Component<any, IState> {
-
     constructor(props: any) {
-        super(props)
+        super(props);
         this.state = {
             sections
-        }
+        };
     }
 
-
-
-    render() {
+    render () {
         return (
-            <div className="directory-menu">
-                {
-                    this.state.sections.map(({ id, ...anotherSectionProps }) => {
-                        return <MenuItem key={id} {...anotherSectionProps} />
-                    })
-                }
+            <div className='directory-menu'>
+                {this.state.sections.map(({ id, ...anotherSectionProps }) => {
+                    return <MenuItem key={id} {...anotherSectionProps} />;
+                })}
             </div>
-        )
+        );
     }
 }
 
 interface IState {
-    sections: ISections[],
+    sections: ISections[];
 }
 
 interface ISections {

@@ -28,11 +28,8 @@ class App extends React.Component<IProps, any> {
         user: store.getState().user.currentUser
       }, () => {
         this.user = this.state.user;
-        console.log(this.user);
       });
     });
-
-    console.log(this.state);
 
     const { setCurrentUser } = this.props;
 

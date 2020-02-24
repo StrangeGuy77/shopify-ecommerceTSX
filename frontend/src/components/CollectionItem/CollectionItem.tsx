@@ -1,6 +1,7 @@
-import * as React from 'react'
-import './CollectionItem.scss'
-import { Items } from '../../pages/ShopPage/ShopPage'
+import * as React from 'react';
+import './CollectionItem.scss';
+import { Items } from '../../pages/ShopPage/ShopPage';
+import CustomButton from '../CustomButton/CustomButton';
 
 const CollectionItem: React.FC<Items> = ({ name, price, imageUrl }) => {
     return (
@@ -16,8 +17,9 @@ const CollectionItem: React.FC<Items> = ({ name, price, imageUrl }) => {
                     {price}$
                 </span>
             </div>
+            <CustomButton inverted> Add to cart </CustomButton>
         </div>
-    )
-}
+    );
+};
 
 export default CollectionItem;

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Collection Item correctly 1`] = `
+<div
+  className="collection-item"
+>
+  <div
+    className="image"
+    style={
+      Object {
+        "backgroundImage": "url()",
+      }
+    }
+  />
+  <div
+    className="collection-footer"
+  >
+    <span
+      className="name"
+    >
+      
+    </span>
+    <span
+      className="price"
+    >
+      121
+      $
+    </span>
+  </div>
+  <button
+    className="inverted  custom-button"
+  >
+     Add to cart 
+  </button>
+</div>
+`;

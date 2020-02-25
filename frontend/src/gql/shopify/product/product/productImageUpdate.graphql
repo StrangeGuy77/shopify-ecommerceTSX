@@ -1,0 +1,16 @@
+mutation productImageUpdate($productId: ID!, $image: ImageInput!) {
+	productImageUpdate(productId: $productId, image: $image) {
+		image {
+			id
+		}
+		userErrors {
+			field
+			message
+		}
+	}
+}
+
+# {
+#   "productId": "Z2lkOi8vU2hvcGlmeS9FeGFtcGxlLzE=",
+#   "image": {}
+# }

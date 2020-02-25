@@ -1,0 +1,21 @@
+mutation productDeleteMedia($productId: ID!, $mediaIds: [ID!]!) {
+	productDeleteMedia(productId: $productId, mediaIds: $mediaIds) {
+		deletedMediaIds
+		deletedProductImageIds
+		mediaUserErrors {
+			code
+			field
+			message
+		}
+		product {
+			id
+		}
+	}
+}
+
+# {
+#   "productId": "Z2lkOi8vU2hvcGlmeS9FeGFtcGxlLzE=",
+#   "mediaIds": [
+#     "Z2lkOi8vU2hvcGlmeS9FeGFtcGxlLzE="
+#   ]
+# }

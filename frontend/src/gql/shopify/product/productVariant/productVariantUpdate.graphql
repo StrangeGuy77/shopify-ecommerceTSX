@@ -1,0 +1,16 @@
+mutation productVariantUpdate($input: ProductVariantInput!) {
+	productVariantUpdate(input: $input) {
+		product {
+			id
+		}
+		productVariant {
+			id
+		}
+		userErrors {
+			field
+			message
+		}
+	}
+}
+
+# ProductVariantInput is compulsory!

@@ -1,0 +1,16 @@
+mutation productVariantDelete($id: ID!) {
+	productVariantDelete(id: $id) {
+		deletedProductVariantId
+		product {
+			id
+		}
+		userErrors {
+			field
+			message
+		}
+	}
+}
+
+# {
+#   "id": "Z2lkOi8vU2hvcGlmeS9FeGFtcGxlLzE="
+# }

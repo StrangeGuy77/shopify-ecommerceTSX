@@ -1,0 +1,16 @@
+mutation productCreate($input: ProductInput!) {
+	productCreate(input: $input) {
+		product {
+			id
+		}
+		shop {
+			id
+		}
+		userErrors {
+			field
+			message
+		}
+	}
+}
+
+# ProductInput is compulsory. media ([CreateMediaInput!]) is an optional argument.

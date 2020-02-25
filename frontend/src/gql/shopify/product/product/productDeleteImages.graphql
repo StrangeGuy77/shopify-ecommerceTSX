@@ -1,0 +1,19 @@
+mutation productDeleteImages($id: ID!, $imageIds: [ID!]!) {
+	productDeleteImages(id: $id, imageIds: $imageIds) {
+		deletedImageIds
+		product {
+			id
+		}
+		userErrors {
+			field
+			message
+		}
+	}
+}
+
+# {
+#   "id": "Z2lkOi8vU2hvcGlmeS9FeGFtcGxlLzE=",
+#   "imageIds": [
+#     "Z2lkOi8vU2hvcGlmeS9FeGFtcGxlLzE="
+#   ]
+# }

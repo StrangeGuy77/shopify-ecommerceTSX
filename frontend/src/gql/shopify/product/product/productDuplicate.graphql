@@ -1,0 +1,22 @@
+mutation productDuplicate($productId: ID!, $newTitle: String!) {
+	productDuplicate(productId: $productId, newTitle: $newTitle) {
+		imageJob {
+			id
+		}
+		newProduct {
+			id
+		}
+		shop {
+			id
+		}
+		userErrors {
+			field
+			message
+		}
+	}
+}
+
+# {
+#   "productId": "Z2lkOi8vU2hvcGlmeS9FeGFtcGxlLzE=",
+#   "newTitle": "placeholder"
+# }

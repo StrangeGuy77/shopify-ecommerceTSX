@@ -17,7 +17,7 @@ export interface WeightInput {
  * @typedef POUNDS 1 pound equals 16 ounces.
  */
 
-declare type WeightUnit = {
+export declare type WeightUnit = {
 	GRAMS: "GRAMS";
 	KILOGRAMS: "KILOGRAMS";
 	OUNCES: "OUNCES";

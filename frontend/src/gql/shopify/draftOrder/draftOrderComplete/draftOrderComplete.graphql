@@ -1,0 +1,14 @@
+mutation draftOrderComplete($id: ID!) {
+	draftOrderComplete(id: $id) {
+		draftOrder {
+			id
+		}
+		userErrors {
+			field
+			message
+		}
+	}
+}
+
+# { "id": "Z2lkOi8vU2hvcGlmeS9FeGFtcGxlLzE=" }
+# paymentPending (boolean) is and optional argument. Specifies whether the payment is pending or not. Default value: false

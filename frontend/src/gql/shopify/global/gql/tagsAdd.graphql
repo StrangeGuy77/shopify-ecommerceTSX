@@ -1,0 +1,18 @@
+mutation tagsAdd($id: ID!, $tags: [String!]!) {
+	tagsAdd(id: $id, tags: $tags) {
+		node {
+			id
+		}
+		userErrors {
+			field
+			message
+		}
+	}
+}
+
+# {
+#   "id": "Z2lkOi8vU2hvcGlmeS9FeGFtcGxlLzE=",
+#   "tags": [
+#     "placeholder"
+#   ]
+# }

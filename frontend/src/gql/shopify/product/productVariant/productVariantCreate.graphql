@@ -1,0 +1,16 @@
+mutation productVariantCreate($input: ProductVariantInput!) {
+	productVariantCreate(input: $input) {
+		product {
+			id
+		}
+		productVariant {
+			id
+		}
+		userErrors {
+			field
+			message
+		}
+	}
+}
+
+# ProductVariantInput required!

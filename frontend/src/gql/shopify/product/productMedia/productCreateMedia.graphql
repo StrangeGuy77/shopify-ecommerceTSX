@@ -1,0 +1,25 @@
+mutation productCreateMedia($productId: ID!, $media: [CreateMediaInput!]!) {
+	productCreateMedia(productId: $productId, media: $media) {
+		media {
+			alt
+		}
+		mediaUserErrors {
+			code
+			field
+			message
+		}
+		product {
+			id
+		}
+	}
+}
+
+# {
+#   "productId": "Z2lkOi8vU2hvcGlmeS9FeGFtcGxlLzE=",
+#   "media": [
+#     {
+#       "originalSource": "placeholder",
+#       "mediaContentType": "placeholder"
+#     }
+#   ]
+# }

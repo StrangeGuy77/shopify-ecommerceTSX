@@ -38,6 +38,6 @@ declare type PrivateMetafieldValueType = {
  * @typedef Code ISO 3166-1 alpha-2 country codes with some differences. ()
  */
 
-export declare type CountryCode = {
-	Code: string;
-};
+export declare type CountryCode = string;
+
+export declare type ID = "gid?://(Shopify)?[-a-zA-Z]{1,256}/[a-zA-Z]{1,6}/([0-9]*)";

@@ -1,7 +1,7 @@
-import {MailingAddressInput} from "../../global/MailingAddressInput";
-import {MetafieldInput} from "../../global/MetafieldInput";
-import {PrivateMetafieldInput} from "../../global/privateMetafieldInput";
-import {TaxExemption} from "../../global/types/TaxExemptionType";
+import {MailingAddressInput} from "../global/MailingAddressInput";
+import {MetafieldInput} from "../global/MetafieldInput";
+import {PrivateMetafieldInput} from "../global/privateMetafieldInput";
+import {TaxExemption} from "../global/types/TaxExemptionType";
 
 /**
  * @description Provides the fields and values to use when creating or updating a customer.

@@ -1,0 +1,12 @@
+mutation draftOrderInvoicePreview($id: ID!) {
+	draftOrderInvoicePreview(id: $id) {
+		previewHtml
+		userErrors {
+			field
+			message
+		}
+	}
+}
+
+# { "id": "Z2lkOi8vU2hvcGlmeS9FeGFtcGxlLzE=" }
+# email input is an option. Requires EmailInput type.

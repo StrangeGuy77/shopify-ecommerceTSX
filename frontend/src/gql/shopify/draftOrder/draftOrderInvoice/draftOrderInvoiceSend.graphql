@@ -1,0 +1,14 @@
+mutation draftOrderInvoiceSend($id: ID!) {
+	draftOrderInvoiceSend(id: $id) {
+		draftOrder {
+			id
+		}
+		userErrors {
+			field
+			message
+		}
+	}
+}
+
+# { "id": "Z2lkOi8vU2hvcGlmeS9FeGFtcGxlLzE=" }
+# email input is an option. Requires EmailInput type.

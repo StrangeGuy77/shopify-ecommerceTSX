@@ -1,4 +1,4 @@
-import {PrivateMetafieldValueInput} from "./types";
+import {PrivateMetafieldValueInput} from "./types/types";
 
 /**
  * @description Specifies the input fields for a PrivateMetafield

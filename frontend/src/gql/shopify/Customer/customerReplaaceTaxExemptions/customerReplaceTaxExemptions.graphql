@@ -1,0 +1,19 @@
+mutation customerReplaceTaxExemptions(
+	$customerId: ID!
+	$taxExemptions: [TaxExemption!]!
+) {
+	customerReplaceTaxExemptions(
+		customerId: $customerId
+		taxExemptions: $taxExemptions
+	) {
+		customer {
+			id
+		}
+		userErrors {
+			field
+			message
+		}
+	}
+}
+
+# { "customerId": "Z2lkOi8vU2hvcGlmeS9FeGFtcGxlLzE=", "taxExemptions": [ "placeholder" ] }

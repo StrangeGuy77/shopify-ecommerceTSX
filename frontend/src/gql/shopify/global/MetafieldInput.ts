@@ -1,4 +1,4 @@
-import {MetafieldValueType} from "./types";
+import {MetafieldValueType} from "./types/types";
 
 /**
  * @description Specifies the input fields for a metafield.

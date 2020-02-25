@@ -1,0 +1,11 @@
+mutation draftOrderDelete($input: DraftOrderDeleteInput!) {
+	draftOrderDelete(input: $input) {
+		deletedId
+		userErrors {
+			field
+			message
+		}
+	}
+}
+
+# { "input": { "id": "Z2lkOi8vU2hvcGlmeS9FeGFtcGxlLzE=" } }

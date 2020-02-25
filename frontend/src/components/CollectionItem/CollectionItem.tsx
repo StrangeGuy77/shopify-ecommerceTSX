@@ -29,12 +29,12 @@ const CollectionItem: React.FC<IProps> = ({ item, addItem }) => {
 };
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-    addItem: (item: any) => dispatch(addItem(item))
+    addItem: (item: Items) => dispatch(addItem(item))
 });
 
 export default connect(null, mapDispatchToProps)(CollectionItem);
 
 interface IProps {
     item: Items;
-    addItem?: any;
+    addItem: (item: Items) => ({}) | void;
 }

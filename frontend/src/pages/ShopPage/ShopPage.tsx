@@ -1,6 +1,6 @@
-import * as React from 'react'
-import { SHOP_DATA } from '../../utils/DirectoryComponentData'
-import CollectionPreview from '../../components/PreviewCollection/PreviewCollection'
+import * as React from 'react';
+import { SHOP_DATA } from '../../utils/DirectoryComponentData';
+import CollectionPreview from '../../components/PreviewCollection/PreviewCollection';
 
 export default class ShopPage extends React.Component<any, IState> {
 
@@ -8,20 +8,20 @@ export default class ShopPage extends React.Component<any, IState> {
         super(props);
         this.state = {
             collections: SHOP_DATA
-        }
+        };
     }
 
-    render() {
+    render () {
         const { collections } = this.state;
         return (
             <div className="shop-page">
                 {
                     collections.map(({ id, ...otherProps }) => {
-                        return <CollectionPreview key={id} {...otherProps} />
+                        return <CollectionPreview key={id} {...otherProps} />;
                     })
                 }
             </div>
-        )
+        );
     }
 }
 
@@ -41,4 +41,5 @@ export interface Items {
     name: string;
     imageUrl: string;
     price: number;
+    addItem?: any;
 }

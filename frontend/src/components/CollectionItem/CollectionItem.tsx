@@ -1,6 +1,8 @@
 import * as React from 'react';
 import './CollectionItem.scss';
 import { Items } from '../../pages/ShopPage/ShopPage';
+import { connect } from 'react-redux';
+import { addItem } from '../../redux/cart/cartActions;
 import CustomButton from '../CustomButton/CustomButton';
 
 const CollectionItem: React.FC<Items> = ({ name, price, imageUrl }) => {
@@ -22,4 +24,8 @@ const CollectionItem: React.FC<Items> = ({ name, price, imageUrl }) => {
     );
 };
 
-export default CollectionItem;
+const mapDispatchToProps = (dispatch: any) => ({
+    addItem: (item: any) => dispatch(addItem(item))
+});
+
+export default connect(null, mapDispatchToProps)(CollectionItem);

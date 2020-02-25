@@ -1,4 +1,4 @@
-import {CountryCode} from "./types";
+import {CountryCode} from "./types/types";
 
 /**
  * @description The fields used to create or update a mailing address.

@@ -1,6 +1,6 @@
-import * as React from 'react'
+import * as React from 'react';
 import './PreviewCollection.scss';
-import { ICollections } from '../../pages/ShopPage/ShopPage'
+import { ICollections } from '../../pages/ShopPage/ShopPage';
 import CollectionItem from '../CollectionItem/CollectionItem';
 
 const PreviewCollection: React.FC<ICollections> = ({ title, items }) => {
@@ -11,15 +11,15 @@ const PreviewCollection: React.FC<ICollections> = ({ title, items }) => {
                 {
                     items
                         .filter((_, idx) => idx < 4)
-                        .map(({ id, ...otherProps }) => {
+                        .map((item) => {
                             return (
-                                <CollectionItem key={id} {...otherProps} />
-                            )
+                                <CollectionItem key={item.id} item={item} />
+                            );
                         })
                 }
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default PreviewCollection;

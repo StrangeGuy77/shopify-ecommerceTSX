@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SHOP_DATA } from '../../utils/DirectoryComponentData';
+import SHOP_DATA from '../../utils/DirectoryComponentData';
 import CollectionPreview from '../../components/PreviewCollection/PreviewCollection';
 
 export default class ShopPage extends React.Component<any, IState> {
@@ -41,5 +41,4 @@ export interface Items {
     name: string;
     imageUrl: string;
     price: number;
-    addItem?: any;
 }

@@ -2,10 +2,14 @@ import * as React from 'react';
 import './CollectionItem.scss';
 import { Items } from '../../pages/ShopPage/ShopPage';
 import { connect } from 'react-redux';
-import { addItem } from '../../redux/cart/cartActions;
+import { addItem } from '../../redux/cart/cartActions';
 import CustomButton from '../CustomButton/CustomButton';
+import { Dispatch } from 'redux';
 
-const CollectionItem: React.FC<Items> = ({ name, price, imageUrl }) => {
+const CollectionItem: React.FC<IProps> = ({ item, addItem }) => {
+
+    const { imageUrl, name, price } = item;
+
     return (
         <div className="collection-item">
             <div className="image" style={{
@@ -19,13 +23,18 @@ const CollectionItem: React.FC<Items> = ({ name, price, imageUrl }) => {
                     {price}$
                 </span>
             </div>
-            <CustomButton inverted> Add to cart </CustomButton>
+            <CustomButton inverted onClick={() => addItem(item)}> Add to cart </CustomButton>
         </div>
     );
 };
 
-const mapDispatchToProps = (dispatch: any) => ({
+const mapDispatchToProps = (dispatch: Dispatch) => ({
     addItem: (item: any) => dispatch(addItem(item))
 });
 
 export default connect(null, mapDispatchToProps)(CollectionItem);
+
+interface IProps {
+    item: Items;
+    addItem?: any;
+}

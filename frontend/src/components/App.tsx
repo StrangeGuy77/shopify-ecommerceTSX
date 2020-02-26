@@ -5,10 +5,14 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Header from "./Header/Header";
 import ShopPage from "../pages/ShopPage/ShopPage";
 import SignIn from "../pages/UserAuth/UserAuth";
+import Checkout from '../pages/Checkout/Checkout';
 import { auth, createUserProfileDocument } from "../services/firebase/firebase";
 import { connect } from 'react-redux';
 import { setCurrentUser } from '../redux/user/userActions';
 import { store } from "../redux/store";
+import GlobalState from "../redux/state";
+import { Dispatch } from "redux";
+import { selectCurrentUser } from "../redux/user/userSelectors";
 
 class App extends React.Component<IProps, any> {
 
@@ -64,6 +68,7 @@ class App extends React.Component<IProps, any> {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
+          <Route exact path="/checkout" component={Checkout} />
           <Route path="" render={() =>
             this.state.user ? (
               <Redirect to='/' />
@@ -94,10 +99,10 @@ interface IProps {
   user?: any;
 }
 
-const mapStateToProps = ({ user }: any) => ({
-  setCurrentUser: user.currentUser
+const mapStateToProps = (state: GlobalState) => ({
+  setCurrentUser: selectCurrentUser(state)
 });
-const mapDispatchToProps = (dispatch: any) => ({
+const mapDispatchToProps = (dispatch: Dispatch) => ({
   setCurrentUser: (user: any) => dispatch(setCurrentUser(user))
 });
 

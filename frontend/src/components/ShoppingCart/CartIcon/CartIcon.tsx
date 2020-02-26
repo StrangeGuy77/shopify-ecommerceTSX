@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { toggleCartHidden } from '../../../redux/cart/cartActions';
 import { selectCartItemsCount } from '../../../redux/cart/cartSelectors';
 import { Dispatch } from 'redux';
+import GlobalState from '../../../redux/state';
 
 
 const CartComponent: React.FC<IProps> = ({ toggleCartHidden, itemCount }) => {
@@ -20,7 +21,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
     toggleCartHidden: () => dispatch(toggleCartHidden())
 });
 
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: GlobalState) => ({
     itemCount: selectCartItemsCount(state)
 });
 

@@ -5,7 +5,10 @@ import { auth } from "../../services/firebase/firebase";
 import { connect } from "react-redux";
 import CartIcon from '../ShoppingCart/CartIcon/CartIcon';
 import CartDropdown from '../ShoppingCart/CartDropdown/CartDropdown';
+import { selectCartHidden } from '../../redux/cart/cartSelectors';
+import { selectCurrentUser } from '../../redux/user/userSelectors';
 import "./Header.scss";
+import GlobalState from "../../redux/state";
 
 const Header: React.FC<any> = ({ currentUser, hidden }) => {
     return (
@@ -43,18 +46,9 @@ const Header: React.FC<any> = ({ currentUser, hidden }) => {
     );
 };
 
-const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }: StateToProps) => ({
-    currentUser,
-    hidden
+const mapStateToProps = (state: GlobalState) => ({
+    currentUser: selectCurrentUser(state),
+    hidden: selectCartHidden(state)
 });
-
-interface StateToProps {
-    user: {
-        currentUser: any;
-    },
-    cart: {
-        hidden: boolean;
-    };
-}
 
 export default connect(mapStateToProps)(Header);

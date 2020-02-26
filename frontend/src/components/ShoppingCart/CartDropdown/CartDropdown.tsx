@@ -6,15 +6,25 @@ import { connect } from 'react-redux';
 import CartItem from '../CartItem/CartItem';
 import { selectCartItems } from '../../../redux/cart/cartSelectors';
 import GlobalState, { cartItem } from '../../../redux/state';
+import { withRouter, RouteChildrenProps } from 'react-router-dom';
+import { toggleCartHidden } from '../../../redux/cart/cartActions';
+import { Dispatch } from 'redux';
 
-const CartDropdown: React.FC<IProps> = ({ cartItems }) => {
+const CartDropdown: React.FC<IProps> = ({ cartItems, history, dispatch }) => {
     return (
         <div className="cart-dropdown">
             <div className="cart-items">
                 {
-                    cartItems.map((item: cartItem) => <CartItem key={item.id} Item={item} />)
+                    cartItems.length ? (
+                        cartItems.map((item: cartItem) => <CartItem key={item.id} Item={item} />)
+                    ) : (
+                            <span className="empty-message"> Your cart is empty </span>
+                        )
                 }
-                <CustomButton> GO TO CHECKOUT </CustomButton>
+                <CustomButton onClick={() => {
+                    history.push('/checkout');
+                    dispatch(toggleCartHidden());
+                }}> GO TO CHECKOUT </CustomButton>
             </div>
         </div>
     );
@@ -24,8 +34,9 @@ const mapStateToProps = (state: GlobalState) => ({
     cartItems: selectCartItems(state)
 });
 
-export default connect(mapStateToProps)(CartDropdown);
+export default withRouter(connect(mapStateToProps)(CartDropdown));
 
-interface IProps {
+interface IProps extends RouteChildrenProps {
     cartItems: cartItem[];
+    dispatch: Dispatch;
 }

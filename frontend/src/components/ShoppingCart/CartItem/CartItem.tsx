@@ -1,7 +1,8 @@
 import * as React from 'react';
 import './CartItemStyles.scss';
+import { cartItem } from '../../../redux/state';
 
-const CartItem: React.FC<any> = ({ item: { imageUrl, price, name, quantity } }) => {
+const CartItem: React.FC<IProps> = ({ Item: { imageUrl, price, name, quantity } }) => {
     return (
         <div className="cart-item">
             <img src={imageUrl} alt="item" />
@@ -16,3 +17,7 @@ const CartItem: React.FC<any> = ({ item: { imageUrl, price, name, quantity } }) 
 };
 
 export default CartItem;
+
+interface IProps {
+    Item: cartItem;
+}

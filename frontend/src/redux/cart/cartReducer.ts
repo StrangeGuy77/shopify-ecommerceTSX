@@ -1,12 +1,13 @@
 import types, {State} from "./cart.d";
 import {addItemToCart} from "./cartUtils";
+import {cartItem} from "../state";
 
 const INITIAL_STATE: State = {
 	hidden: true,
 	cartItems: []
 };
 
-const cartReducer = (state: State = INITIAL_STATE, action: any) => {
+const cartReducer = (state: State = INITIAL_STATE, action: CartAction) => {
 	switch (action.type) {
 		case types.TOGGLE_CART_HIDDEN:
 			return {
@@ -24,3 +25,8 @@ const cartReducer = (state: State = INITIAL_STATE, action: any) => {
 };
 
 export default cartReducer;
+
+interface CartAction {
+	type: string;
+	payload: cartItem;
+}

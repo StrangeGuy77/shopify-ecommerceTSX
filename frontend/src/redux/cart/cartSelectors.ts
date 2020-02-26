@@ -1,18 +1,25 @@
 import {createSelector} from "reselect";
+import GlobalState, {cartItem} from "../state";
 
-const selectCart = (state: any) => state.cart;
+const selectCart = (state: GlobalState) => {
+	return state.cart;
+};
 
 export const selectCartItems = createSelector(
 	[selectCart],
-	(cart: any) => cart.cartItems
+	(cart: cart) => cart.cartItems
 );
 
 export const selectCartItemsCount = createSelector(
 	[selectCartItems],
-	(cartItems: any) =>
+	(cartItems: cartItem[]) =>
 		cartItems.reduce(
-			(accumulatedQuantity: any, cartItem: any) =>
+			(accumulatedQuantity: number, cartItem: cartItem) =>
 				accumulatedQuantity + cartItem.quantity,
 			0
 		)
 );
+
+interface cart {
+	cartItems: cartItem[];
+}

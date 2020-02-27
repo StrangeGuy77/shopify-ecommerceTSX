@@ -1,44 +1,17 @@
 import * as React from 'react';
-import { ShopData } from '../../utils/DirectoryComponentData';
-import CollectionPreview from '../../components/PreviewCollection/PreviewCollection';
+import CollectionOverview from '../../components/CollectionsOverview/CollectionOverview';
+import { Route, RouteComponentProps } from 'react-router-dom';
+import Collection from './Collection/Collection';
 
-export default class ShopPage extends React.Component<any, IState> {
+const ShopPage: React.FC<IProps> = ({ match }) => {
+    return (
+        <div className="shop-page">
+            <Route exact path={`${match.path}`} component={CollectionOverview} />
+            <Route path={`${match.path}/:categoryId`} component={Collection} />
+        </div>
+    );
+};
 
-    constructor(props: any) {
-        super(props);
-        this.state = {
-            collections: ShopData
-        };
-    }
+interface IProps extends RouteComponentProps { };
 
-    render () {
-        const { collections } = this.state;
-        return (
-            <div className="shop-page">
-                {
-                    collections.map(({ id, ...otherProps }) => {
-                        return <CollectionPreview key={id} {...otherProps} />;
-                    })
-                }
-            </div>
-        );
-    }
-}
-
-interface IState {
-    collections: ICollections[];
-}
-
-export interface ICollections {
-    id?: number;
-    title: string;
-    routeName: string;
-    items: Items[];
-}
-
-export interface Items {
-    id?: number;
-    name: string;
-    imageUrl: string;
-    price: number;
-}
+export default ShopPage;

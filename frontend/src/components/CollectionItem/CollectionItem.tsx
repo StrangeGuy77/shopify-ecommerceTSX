@@ -1,10 +1,10 @@
 import * as React from 'react';
 import './CollectionItem.scss';
-import { Items } from '../../pages/ShopPage/ShopPage';
 import { connect } from 'react-redux';
 import { addItem } from '../../redux/cart/cartActions';
 import CustomButton from '../CustomButton/CustomButton';
 import { Dispatch } from 'redux';
+import { Items } from '../CollectionsOverview/CollectionOverview';
 
 const CollectionItem: React.FC<IProps> = ({ item, addItem }) => {
 

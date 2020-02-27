@@ -8,7 +8,7 @@ class MenuItem extends React.Component<any | IProps> {
         return (
             <div className={`menu-item ${this.props.size}`} onClick={() => this.props.history.push(`${this.props.match.url}${this.props.linkUrl}`)}>
                 <div className="background-image" style={{
-                    backgroundImage: `url(${this.props.items[0].imageUrl
+                    backgroundImage: `url(${this.props.imageUrl
                         })`
                 }} />
                 <div className="content">

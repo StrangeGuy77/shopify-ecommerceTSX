@@ -1,5 +1,5 @@
 import cartTypes from "./cart.d";
-import {Items} from "../../pages/ShopPage/ShopPage";
+import {Items} from "../../components/CollectionsOverview/CollectionOverview";
 
 export const toggleCartHidden = () => ({
 	type: cartTypes.TOGGLE_CART_HIDDEN

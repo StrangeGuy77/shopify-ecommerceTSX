@@ -1,43 +1,34 @@
 import "./DirectoryStyles.scss";
 import * as React from "react";
-import { ShopData } from "../../utils/DirectoryComponentData";
 import MenuItem from "../MenuItem/MenuItem";
+import { connect } from 'react-redux';
+import { selectDirectorySections } from "../../redux/directory/directorySelector";
+import GlobalState from "../../redux/state";
 
-export default class Directory extends React.Component<any, IState> {
-    constructor(props: any) {
-        super(props);
-        this.state = {
-            ShopData
-        };
-    }
+const Directory: React.FC<IProps> = ({ sections }) => {
 
-    render () {
-        return (
-            <div className='directory-menu'>
-                {this.state.ShopData.map(({ id, ...anotherSectionProps }) => {
-                    return <MenuItem key={id} {...anotherSectionProps} />;
-                })}
-            </div>
-        );
-    }
+    return (
+        <div className='directory-menu'>
+            {sections.map(({ id, ...anotherSectionProps }) => {
+                return <MenuItem key={id} {...anotherSectionProps} />;
+            })}
+        </div>
+    );
+};
+
+const mapStateToProps = (state: GlobalState) => ({
+    sections: selectDirectorySections(state)
+});
+
+export default connect(mapStateToProps)(Directory);
+
+interface IProps {
+    sections: Items[];
 }
 
-interface IState {
-    ShopData: ShopInfo[];
-}
-
-interface ShopInfo {
+export interface Items {
     id: number;
-    title: string;
-    routeName: string;
-    items: Items[];
-}
-
-interface Items {
-    id: number;
-    name: string;
     imageUrl: string;
     linkUrl?: string;
-    price: number;
     size?: string;
 }

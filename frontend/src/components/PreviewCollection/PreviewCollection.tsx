@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './PreviewCollection.scss';
-import { ICollections } from '../../pages/ShopPage/ShopPage';
 import CollectionItem from '../CollectionItem/CollectionItem';
+import { ICollections } from '../CollectionsOverview/CollectionOverview';
 
 const PreviewCollection: React.FC<ICollections> = ({ title, items }) => {
     return (

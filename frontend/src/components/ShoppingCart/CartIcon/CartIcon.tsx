@@ -8,10 +8,10 @@ import { Dispatch } from 'redux';
 import GlobalState from '../../../redux/state';
 
 
-const CartComponent: React.FC<IProps> = ({ toggleCartHidden, itemCount }) => {
+const CartIcon: React.FC<IProps> = ({ toggleCartHidden, itemCount }) => {
     return (
         <div className="cart-icon">
-            <ShoppingIcon className="shopping-icon" onClick={toggleCartHidden} />
+            <ShoppingIcon className="shopping-icon" onClick={() => toggleCartHidden()} />
             <span className="item-count"> {itemCount}</span>
         </div>
     );
@@ -25,9 +25,9 @@ const mapStateToProps = (state: GlobalState) => ({
     itemCount: selectCartItemsCount(state)
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);
 
 interface IProps {
-    toggleCartHidden?: () => ({ type: string; });
-    itemCount?: string | number;
+    toggleCartHidden: () => ({ type: string; });
+    itemCount: string | number;
 }

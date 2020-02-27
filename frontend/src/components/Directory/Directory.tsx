@@ -1,6 +1,6 @@
 import "./DirectoryStyles.scss";
 import * as React from "react";
-import ShopData from "../../utils/DirectoryComponentData";
+import { ShopData } from "../../utils/DirectoryComponentData";
 import MenuItem from "../MenuItem/MenuItem";
 
 export default class Directory extends React.Component<any, IState> {

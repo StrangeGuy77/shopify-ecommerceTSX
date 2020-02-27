@@ -1,5 +1,5 @@
 import * as React from 'react';
-import SHOP_DATA from '../../utils/DirectoryComponentData';
+import { ShopData } from '../../utils/DirectoryComponentData';
 import CollectionPreview from '../../components/PreviewCollection/PreviewCollection';
 
 export default class ShopPage extends React.Component<any, IState> {
@@ -7,7 +7,7 @@ export default class ShopPage extends React.Component<any, IState> {
     constructor(props: any) {
         super(props);
         this.state = {
-            collections: SHOP_DATA
+            collections: ShopData
         };
     }
 

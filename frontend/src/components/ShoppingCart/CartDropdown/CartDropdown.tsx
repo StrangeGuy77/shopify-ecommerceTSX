@@ -15,7 +15,7 @@ const CartDropdown: React.FC<IProps> = ({ cartItems, history, dispatch }) => {
         <div className="cart-dropdown">
             <div className="cart-items">
                 {
-                    cartItems.length ? (
+                    cartItems ? (
                         cartItems.map((item: cartItem) => <CartItem key={item.id} Item={item} />)
                     ) : (
                             <span className="empty-message"> Your cart is empty </span>

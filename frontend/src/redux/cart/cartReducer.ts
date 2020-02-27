@@ -1,13 +1,13 @@
-import types, {State} from "./cart.d";
+import types, {CartState} from "./cart.d";
 import {addItemToCart} from "./cartUtils";
-import {cartItem} from "../state";
+import {cartItem} from "../state.d";
 
-const INITIAL_STATE: State = {
+const INITIAL_STATE: CartState = {
 	hidden: true,
 	cartItems: []
 };
 
-const cartReducer = (state: State = INITIAL_STATE, action: CartAction) => {
+const cartReducer = (state: CartState = INITIAL_STATE, action: CartAction) => {
 	switch (action.type) {
 		case types.TOGGLE_CART_HIDDEN:
 			return {
@@ -18,6 +18,13 @@ const cartReducer = (state: State = INITIAL_STATE, action: CartAction) => {
 			return {
 				...state,
 				cartItems: addItemToCart(state.cartItems, action.payload)
+			};
+		case types.CLEAR_ITEM_FROM_CART:
+			return {
+				...state,
+				cartItems: state.cartItems.filter(
+					(item: cartItem) => item.id !== action.payload.id
+				)
 			};
 		default:
 			return state;

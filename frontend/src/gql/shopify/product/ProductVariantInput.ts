@@ -73,21 +73,24 @@ export interface inventoryItemInput {
  * @typedef SHOPIFY Shopify tracks this product variant's inventory.
  */
 
-interface ProductVariantInventoryManagement {
-	FULFILLMENT_SERVICE: "FULFILLMENT_SERVICE";
-	NOT_MANAGED: "NOT_MANAGED";
-	SHOPIFY: "SHOPIFY";
-}
+export declare type ProductVariantInventoryManagement =
+	| FULFILLMENT_SERVICE
+	| NOT_MANAGED
+	| SHOPIFY;
+
+declare type FULFILLMENT_SERVICE = "FULFILLMENT_SERVICE";
+declare type NOT_MANAGED = "NOT_MANAGED";
+declare type SHOPIFY = "SHOPIFY";
 
 /**
  * @description The inventory policy for a product variant controls whether customers can continue to buy the variant when it is out of stock. When the value is continue, customers are able to buy the variant when it's out of stock. When the value is deny, customers can't buy the variant when it's out of stock.
  * @typedef CONTINUE Continue selling a product variant when it is out of stock.
  * @typedef DENY Stop selling a product variant when it is out of stock.
  */
-interface ProductVariantInventoryPolicy {
-	CONTINUE: "CONTINUE";
-	DENY: "DENY";
-}
+declare type ProductVariantInventoryPolicy = CONTINUE | DENY;
+
+declare type CONTINUE = "CONTINUE";
+declare type DENY = "DENY";
 
 /**
  * @description Inventory quantity at a specific location.

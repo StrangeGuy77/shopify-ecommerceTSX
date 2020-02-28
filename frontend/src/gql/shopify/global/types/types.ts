@@ -1,15 +1,25 @@
 /**
  * @description Metafield value types.
+ */
+export declare type MetafieldValueType = INTEGER | JSON_STRING | STRING;
+
+/**
+ * @description Private Metafield value types.
+ */
+declare type PrivateMetafieldValueType = INTEGER | JSON_STRING | STRING;
+
+/**
  * @typedef INTEGER An integer.
+ */
+declare type INTEGER = "INTEGER";
+/**
  * @typedef JSON_STRING A Json string.
+ */
+declare type JSON_STRING = "JSON_STRING";
+/**
  * @typedef STRING A string.
  */
-
-export declare type MetafieldValueType = {
-	INTEGER: Number;
-	JSON_STRING: JSON;
-	STRING: String;
-};
+declare type STRING = "STRING";
 
 /**
  * @description Value Input wraps two fields of Private Metafields into one. Those fields are value and value_type.
@@ -18,20 +28,8 @@ export declare type MetafieldValueType = {
  */
 
 export declare type PrivateMetafieldValueInput = {
-	value: String;
+	value: string;
 	valueType: PrivateMetafieldValueType;
-};
-
-/**
- * @description Private Metafield value types.
- * @typedef INTEGER An integer.
- * @typedef JSON_STRING A Json string.
- * @typedef STRING A string.
- */
-declare type PrivateMetafieldValueType = {
-	INTEGER: Number;
-	JSON_STRING: String;
-	STRING: String;
 };
 
 /**

@@ -17,9 +17,9 @@ export interface WeightInput {
  * @typedef POUNDS 1 pound equals 16 ounces.
  */
 
-export declare type WeightUnit = {
-	GRAMS: "GRAMS";
-	KILOGRAMS: "KILOGRAMS";
-	OUNCES: "OUNCES";
-	POUNDS: "POUNDS";
-};
+export declare type WeightUnit = GRAMS | KILOGRAMS | OUNCES | POUNDS;
+
+declare type GRAMS = "GRAMS";
+declare type KILOGRAMS = "KILOGRAMS";
+declare type OUNCES = "OUNCES";
+declare type POUNDS = "POUNDS";

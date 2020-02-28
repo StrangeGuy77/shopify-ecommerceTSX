@@ -43,12 +43,12 @@ export default interface ProductInput {
 	giftCardTemplateSuffix?: string;
 	handle?: string;
 	id: string;
-	images?: ImageInput[];
+	images: ImageInput[];
 	metafields?: MetafieldInput[];
 	options?: string[];
 	privateMetafields?: PrivateMetafieldInput[];
 	productPublications?: ProductPublicationInput[];
-	productType: string;
+	productType?: string;
 	publishDate?: string;
 	publishOn?: string;
 	published?: boolean;
@@ -57,7 +57,7 @@ export default interface ProductInput {
 	seo?: SEOInput;
 	tags?: string[];
 	templateSuffix?: string;
-	title?: string;
-	variants?: ProductVariantInput[];
+	title: string;
+	variants: ProductVariantInput[];
 	vendor?: string;
 }

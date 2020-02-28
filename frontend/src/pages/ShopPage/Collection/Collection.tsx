@@ -25,12 +25,14 @@ const CategoryComponent: React.FC<IProps> = ({ shop }) => {
     );
 };
 
+
+
 const mapStateToProps = (state: GlobalState, OwnProps: IProps) => ({
     shop: selectExactCollectionCategory(OwnProps.match.params.categoryId)(state)
 });
 
 interface IProps extends RouteComponentProps<MatchParams> {
-    shop: ICollections | null | undefined;
+    shop: ICollections;
 }
 
 interface MatchParams {

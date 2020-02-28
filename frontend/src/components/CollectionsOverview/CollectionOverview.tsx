@@ -9,8 +9,10 @@ const CollectionOverview: React.FC<IShopProps> = ({ collections }) => {
     return (
         <div className="collections-overview">
             {
-                collections.map(({ id, ...otherProps }) => {
-                    return <CollectionPreview key={id} {...otherProps} />;
+                collections.map(({ id, routeName, ...otherProps }) => {
+                    return (
+                        <CollectionPreview key={id} {...otherProps} />
+                    );
                 })
             }
         </div>
@@ -30,7 +32,7 @@ export interface IShopProps {
 export interface ICollections {
     id?: number;
     title: string;
-    routeName: string;
+    routeName?: string;
     items: Items[];
 }
 

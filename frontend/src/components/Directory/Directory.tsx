@@ -10,7 +10,9 @@ const Directory: React.FC<IProps> = ({ sections }) => {
     return (
         <div className='directory-menu'>
             {sections.map(({ id, ...anotherSectionProps }) => {
-                return <MenuItem key={id} {...anotherSectionProps} />;
+                return (
+                    <MenuItem {...anotherSectionProps} key={id} />
+                );
             })}
         </div>
     );
@@ -31,4 +33,5 @@ export interface Items {
     imageUrl: string;
     linkUrl?: string;
     size?: string;
+    title: string;
 }

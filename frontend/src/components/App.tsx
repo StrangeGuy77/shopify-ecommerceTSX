@@ -69,7 +69,7 @@ class App extends React.Component<IProps, any> {
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
           <Route exact path="/checkout" component={Checkout} />
-          <Route path="" render={() =>
+          <Route path="/signin" render={() =>
             this.state.user ? (
               <Redirect to='/' />
             ) : (

@@ -32,7 +32,7 @@ const mapStateToProps = (state: GlobalState, OwnProps: IProps) => ({
 });
 
 interface IProps extends RouteComponentProps<MatchParams> {
-    shop: ICollections;
+    shop: ICollections | null | undefined;
 }
 
 interface MatchParams {

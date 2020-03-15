@@ -1,6 +1,7 @@
 import ProductInput from "../ProductInput";
+import {varianProductTemplate} from "./variants/variantProductTemplate";
 
-export const productTemplate: ProductInput = {
+const productTemplate: ProductInput = {
 	id: "gid://triedthisthingforfourtimeorso",
 	images: [
 		{
@@ -115,6 +116,9 @@ export const productTemplate: ProductInput = {
 			taxable: "ThisShouldBeABoolean",
 			title: "TestTitle",
 			weight: 123
-		}
+		},
+		varianProductTemplate
 	]
 };
+
+export default productTemplate;

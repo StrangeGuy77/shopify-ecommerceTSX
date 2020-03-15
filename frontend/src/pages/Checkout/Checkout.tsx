@@ -28,6 +28,9 @@ const Checkout: React.FC<IProps> = ({ cartItems, total }) => {
             {
                 cartItems.map(item => <CheckoutItem key={item.id} cartItem={item} />)
             }
+            <div className="stripe">
+
+            </div>
             <div className="total">
                 <span>TOTAL: {total}$</span>
             </div>
